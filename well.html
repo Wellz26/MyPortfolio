@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellington Mukahiwa | Cybersecurity Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+        body {
+            font-family: 'Orbitron', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: radial-gradient(circle, #0f0f0f, #000);
+            color: #00ff00;
+            overflow-x: hidden;
+            text-shadow: 0 0 10px #00ff00;
+        }
+        header {
+            background: linear-gradient(to right, #000, #003300);
+            color: #00ff00;
+            padding: 50px 20px;
+            text-align: center;
+            animation: cyberGlow 1.5s infinite alternate;
+        }
+        @keyframes cyberGlow {
+            from { text-shadow: 0 0 10px #00ff00; }
+            to { text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00; }
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 15px;
+            background: #111;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: #00ff00;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            border: 1px solid #00ff00;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        nav a:hover {
+            background: #00ff00;
+            color: #000;
+        }
+        section {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 0 15px #00ff00;
+            border-radius: 10px;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+        }
+        .visible {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+        h2 {
+            color: #00ff00;
+            border-bottom: 2px solid #00ff00;
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+        .contact a {
+            color: #00ff00;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            background: #00ff00;
+            color: #000;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #ff0000;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #000;
+            color: #00ff00;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Wellington Mukahiwa</h1>
+        <p>Cybersecurity Student | IT Security | Ethical Hacking</p>
+    </header>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Dedicated Cybersecurity student at Walsh University with a 3.89 GPA, skilled in cloud security, phishing prevention, access & security management, and website security.</p>
+    </section>
+    <section id="education">
+        <h2>Education</h2>
+        <p><strong>Walsh University</strong> - Bachelor of Arts in Cybersecurity (Expected 2027)</p>
+        <p><strong>Notre Dame College</strong> - Bachelor of Arts in Cybersecurity (Transferred 3.9 GPA)</p>
+        <p><strong>Riverton Acedmy</strong> - High School Diploma in Science (2017-2022)</p>
+    </section>
+    <section id="skills">
+        <h2>Technical Skills</h2>
+        <ul>
+            <li>Cybersecurity: Cloud Security, Password Management, Phishing Prevention</li>
+            <li>Network Security & Firewall Configuration</li>
+            <li>Programming: Python, SQL, Java, Bash</li>
+            <li>Threat Intelligence & Incident Response</li>
+            <li>Web Publishing</li>
+            <li>Data Security and DataBase Management</li>
+            <li>Social Media Management</li>
+            <li>Business Management and Development</li>
+            <li>Microsoft Office Pro</li>
+            <li>Course Builder for Walsh University</li>
+            <li>Digitalize offline plateforms into strong user friendly plateforms</li>
+        </ul>
+    </section>
+    <section id="experience">
+        <h2>Work Experience</h2>
+        <p><strong>Kontrol Tekniks</strong> - Cybersecurity Analyst, Website Developer, Social Media Manager, Google Maps License Holder, Project Manager</p>
+        <p><strong>Walsh University</strong> -  Cloud Security, Phishing Prevention, Access Management, Enhancing Website Development And Search Engine Optimization (SEO), Optimizing IT Security Systems and Formulating Digital Strategies For Business Growth</p>
+    </section>
+    <section id="projects">
+        <h2>Projects & Certifications</h2>
+        <p>✔ Developed a secure cousre website for Walsh University.</p>
+        <p>✔ Simulated and mitigated an advanced phishing attack scenario.</p>
+        <p>✔ CompTIA Security+ (In Progress)</p>
+        <p>✔ Certified Ethical Hacker (In Progress)</p>
+    </section>
+    <section id="contact" class="contact">
+        <h2>Contact</h2>
+        <a href="https://linkedin.com/in/wellingtonmukahiwa" class="btn">Connect on LinkedIn</a>
+    </section>
+    <footer>
+        <p>&copy; 2025 Wellington Mukahiwa | Cybersecurity Portfolio</p>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let sections = document.querySelectorAll("section");
+            let observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            }, { threshold: 0.3 });
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
