@@ -41,9 +41,11 @@
             justify-content: center;
             gap: 10px;
             margin-top: 15px;
+            flex-wrap: wrap;
         }
         .input-container input {
-            width: 60%;
+            width: 100%;
+            max-width: 400px;
             padding: 10px;
             font-size: 1.1em;
             background: black;
@@ -66,12 +68,27 @@
             transform: scale(1.1);
         }
         .section-container {
-            max-width: 900px;
+            max-width: 90%;
+            width: 900px;
             margin: 20px auto;
             padding: 20px;
             background: rgba(0, 0, 0, 0.8);
             box-shadow: 0 0 15px #00ff99;
             border-radius: 10px;
+        }
+        @media (max-width: 600px) {
+            .terminal {
+                width: 95%;
+                font-size: 1em;
+                padding: 15px;
+            }
+            .input-container {
+                flex-direction: column;
+            }
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -107,5 +124,7 @@
     </script>
 </body>
 </html>
-"Updated index.html to link with welllz2.html"
+
+</html
+Updated index.html to link with welllz2.html
 
