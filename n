@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellington Mukahiwa | Cybersecurity Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+        body {
+            font-family: 'Orbitron', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: radial-gradient(circle, #0f0f0f, #000);
+            color: #00ff00;
+            overflow-x: hidden;
+            text-shadow: 0 0 10px #00ff00;
+        }
+        header {
+            background: linear-gradient(to right, #000, #003300);
+            color: #00ff00;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px;
+            background: #111;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: #00ff00;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 12px;
+            border: 1px solid #00ff00;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        nav a:hover {
+            background: #00ff00;
+            color: #000;
+        }
+        section {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 0 15px #00ff00;
+            border-radius: 10px;
+        }
+        h2 {
+            color: #00ff00;
+            border-bottom: 2px solid #00ff00;
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            background: #00ff00;
+            color: #000;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #ff0000;
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #000;
+            color: #00ff00;
+            margin-top: 20px;
+        }
+        @media screen and (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav a {
+                padding: 10px;
+                width: 90%;
+                text-align: center;
+            }
+            section {
+                max-width: 95%;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Wellington Mukahiwa</h1>
+        <p>Cybersecurity Student | IT Security | Ethical Hacking</p>
+    </header>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Cybersecurity student at Walsh University, skilled in cloud security, phishing prevention, access & security management, and website security.</p>
+    </section>
+    <section id="education">
+        <h2>Education</h2>
+        <p><strong>Walsh University</strong> - Bachelor of Arts in Cybersecurity (Expected 2027)</p>
+        <p><strong>Notre Dame College</strong> - Bachelor of Arts in Cybersecurity (Transferred 3.9 GPA)</p>
+        <p><strong>Riverton Academy</strong> - High School Diploma in Science (2017-2022)</p>
+    </section>
+    <section id="skills">
+        <h2>Technical Skills</h2>
+        <ul>
+            <li>Cybersecurity, Phishing Prevention, Network Security</li>
+            <li>Programming: Python, SQL, Java, Bash</li>
+            <li>Threat Intelligence & Incident Response</li>
+            <li>Website Development & SEO</li>
+            <li>Business & Social Media Management</li>
+        </ul>
+    </section>
+    <section id="experience">
+        <h2>Work Experience</h2>
+        <p><strong>Kontrol Tekniks</strong> - Cybersecurity Analyst, Website Developer</p>
+        <p><strong>Walsh University</strong> - Cloud Security, IT Security Enhancement</p>
+    </section>
+    <section id="projects">
+        <h2>Projects & Certifications</h2>
+        <p>✔ Developed a secure course website for Walsh University.</p>
+        <p>✔ Simulated and mitigated an advanced phishing attack scenario.</p>
+        <p>✔ CompTIA Security+ (In Progress)</p>
+        <p>✔ Certified Ethical Hacker (In Progress)</p>
+    </section>
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:wellymukahiwa@gmail.com">wellymukahiwa@gmail.com</a></p>
+        <a href="https://linkedin.com/in/wellingtonmukahiwa" class="btn">Connect on LinkedIn</a>
+    </section>
+    <footer>
+        <p>&copy; 2025 Wellington Mukahiwa | Cybersecurity Portfolio</p>
+    </footer>
+</body>
+</html>
