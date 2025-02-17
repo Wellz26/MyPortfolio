@@ -28,15 +28,19 @@
         }
         nav {
             display: flex;
-            justify-content: center;
-            gap: 20px;
+            justify-content: space-between;
+            align-items: center;
             padding: 15px;
             background: #111;
             position: sticky;
             top: 0;
             z-index: 1000;
         }
-        nav a {
+        .menu {
+            display: flex;
+            gap: 20px;
+        }
+        .menu a {
             color: #00ff00;
             text-decoration: none;
             font-weight: bold;
@@ -45,55 +49,36 @@
             border-radius: 5px;
             transition: all 0.3s;
         }
-        nav a:hover {
+        .menu a:hover {
             background: #00ff00;
             color: #000;
         }
-        section {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.8);
-            box-shadow: 0 0 15px #00ff00;
-            border-radius: 10px;
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-        }
-        .visible {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
-        }
-        h2 {
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5em;
             color: #00ff00;
-            border-bottom: 2px solid #00ff00;
-            padding-bottom: 5px;
-            display: inline-block;
+            padding: 10px;
         }
-        .contact a {
-            color: #00ff00;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            margin-top: 10px;
-            background: #00ff00;
-            color: #000;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-        .btn:hover {
-            background: #ff0000;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #000;
-            color: #00ff00;
-            margin-top: 20px;
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: #111;
+                padding: 10px;
+            }
+            .menu a {
+                display: block;
+                text-align: center;
+                padding: 10px;
+            }
+            .menu-toggle {
+                display: block;
+            }
         }
     </style>
 </head>
@@ -103,12 +88,15 @@
         <p>Cybersecurity Student | IT Security | Ethical Hacking</p>
     </header>
     <nav>
-        <a href="#about">About</a>
-        <a href="#education">Education</a>
-        <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <div class="menu">
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
     </nav>
     <section id="about">
         <h2>About Me</h2>
@@ -152,24 +140,16 @@
         <h2>Contact</h2>
         <a href="https://linkedin.com/in/wellingtonmukahiwa" class="btn">Connect on LinkedIn</a>
     </section>
+
     <footer>
         <a href="index.html" class="btn">🔙 Back to Terminal</a>
         <p>&copy; 2025 Wellington Mukahiwa | Cybersecurity Portfolio</p>
     </footer>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            let sections = document.querySelectorAll("section");
-            let observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("visible");
-                    }
-                });
-            }, { threshold: 0.3 });
-            sections.forEach(section => {
-                observer.observe(section);
-            });
-        });
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+        }
     </script>
 </body>
 </html>
