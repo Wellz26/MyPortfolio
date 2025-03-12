@@ -3,31 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Wellington Mukahiwa's Cybersecurity Portfolio - showcasing skills, education, and experience in IT security, ethical hacking, and web development.">
+    <meta name="description" content="Wellington Mukahiwa's Cybersecurity Portfolio - showcasing skills in IT security, ethical hacking, and web development.">
     <title>Wellington Mukahiwa | Cybersecurity Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
         body {
             font-family: 'Orbitron', sans-serif;
             margin: 0;
             padding: 0;
             background: #000;
             color: #00ff99;
-            text-shadow: 0 0 10px #00ff99;
             overflow-x: hidden;
         }
+
         .terminal {
             background: #0a0a0a;
-            padding: 20px;
-            border-radius: 10px;
+            padding: 30px;
+            border-radius: 12px;
             width: 90%;
             max-width: 800px;
-            margin: 50px auto;
-            box-shadow: 0 0 20px #00ff99;
+            margin: 60px auto;
+            box-shadow: 0 0 30px #00ff99;
             font-size: 1.2em;
             text-align: center;
+            animation: fadeIn 1s ease-in;
         }
+
         .terminal p {
+            margin: 10px 0;
             color: #00ff99;
             font-family: monospace;
             white-space: nowrap;
@@ -35,24 +41,50 @@
             border-right: 2px solid #00ff99;
             animation: typing 3s steps(40, end) forwards, blink-caret 0.75s step-end infinite;
         }
+
+        /* Animations */
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #00ff99 }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         .input-container {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
-            margin-top: 15px;
+            margin-top: 20px;
             flex-wrap: wrap;
         }
+
         .input-container input {
             width: 100%;
             max-width: 400px;
-            padding: 10px;
+            padding: 12px;
             font-size: 1.1em;
             background: black;
             color: #00ff99;
             border: 1px solid #00ff99;
+            border-radius: 5px;
             text-align: center;
+            outline: none;
+            transition: box-shadow 0.3s;
         }
+
+        .input-container input:focus {
+            box-shadow: 0 0 10px #00ff99;
+        }
+
         .btn {
             padding: 12px 24px;
             background: #00ff99;
@@ -63,28 +95,34 @@
             transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
             cursor: pointer;
         }
+
         .btn:hover {
             background: #ff0000;
             transform: scale(1.1);
         }
+
         .section-container {
             max-width: 90%;
             width: 900px;
-            margin: 20px auto;
+            margin: 40px auto;
             padding: 20px;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.85);
             box-shadow: 0 0 15px #00ff99;
-            border-radius: 10px;
+            border-radius: 12px;
+            animation: fadeIn 1.5s ease-in;
         }
+
+        .section-container h2 {
+            margin-bottom: 15px;
+        }
+
         @media (max-width: 600px) {
             .terminal {
                 width: 95%;
                 font-size: 1em;
-                padding: 15px;
+                padding: 20px;
             }
-            .input-container {
-                flex-direction: column;
-            }
+
             .btn {
                 width: 100%;
                 text-align: center;
@@ -93,30 +131,39 @@
     </style>
 </head>
 <body>
-    <div class="terminal">
-        <p>> Initializing Cybersecurity Portfolio...</p>
-        <p>> Welcome, Employer. You are accessing secure files.</p>
-        <p>> To proceed, decrypt the following code:</p>
-        <p><span id="challenge">01101001 01101110 01110100 01100101 01110010 01101110 01110011 01101000 01101001 01101110 01110000</span></p>
-        <p>> Password: <strong>internship</strong></p>
-        <p>> Enter your response below:</p>
-        <div class="input-container">
-            <input type="text" id="decryptInput" placeholder="Enter password...">
-            <button class="btn" onclick="checkDecryption()">Decrypt</button>
+    <main>
+        <div class="terminal" aria-label="Terminal Intro">
+            <p>> Initializing Cybersecurity Portfolio...</p>
+            <p>> Welcome, Employer. You are accessing secure files.</p>
+            <p>> To proceed, decrypt the following code:</p>
+            <p><span id="challenge">01101001 01101110 01110100 01100101 01110010 01101110 01110011 01101000 01101001 01101110 01110000</span></p>
+            <p>> Password: <strong>internship</strong></p>
+            <p>> Enter your response below:</p>
+            
+            <div class="input-container">
+                <input type="text" id="decryptInput" placeholder="Enter password..." aria-label="Enter password">
+                <button class="btn" onclick="checkDecryption()" aria-label="Decrypt button">Decrypt</button>
+            </div>
         </div>
-    </div>
-    <section id="about" class="section-container">
-        <h2>About Me</h2>
-        <p>Dedicated Cybersecurity student at Walsh University with a 3.89 GPA, skilled in cloud security, phishing prevention, access & security management, and website security.</p>
-    </section>
+
+        <section id="about" class="section-container" aria-label="About Me">
+            <h2>About Me</h2>
+            <p>
+                I'm Wellington Mukahiwa, a Cybersecurity student at Walsh University with a GPA of 3.89.
+                Proficient in cloud security, phishing prevention, access & security management, and website security. Passionate about ethical hacking and protecting digital environments.
+            </p>
+        </section>
+    </main>
+
     <script>
         function checkDecryption() {
-            let input = document.getElementById("decryptInput").value.trim().toLowerCase();
+            const input = document.getElementById("decryptInput").value.trim().toLowerCase();
+
             if (input === "internship") {
                 alert("✅ Access Granted! Redirecting to portfolio...");
                 setTimeout(() => {
-                    window.location.href = "welllz2.html"; // Change this to your actual portfolio URL
-                }, 500);
+                    window.location.href = "welllz2.html"; // Update with your actual URL
+                }, 800);
             } else {
                 alert("❌ Access Denied! Try again.");
             }
@@ -125,6 +172,4 @@
 </body>
 </html>
 
-</html
-Updated index.html to link with welllz2.html
 
