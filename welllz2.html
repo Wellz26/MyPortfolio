@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wellington Mukahiwa | Cybersecurity Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
+
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
-        body {
-            font-family: 'Orbitron', sans-serif;
+        /* Reset & Base Styles */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Orbitron', sans-serif;
             background: radial-gradient(circle, #0f0f0f, #000);
             color: #00ff00;
             overflow-x: hidden;
             text-shadow: 0 0 10px #00ff00;
+            scroll-behavior: smooth;
         }
+
         header {
             background: linear-gradient(to right, #000, #003300);
             color: #00ff00;
@@ -22,10 +32,12 @@
             text-align: center;
             animation: cyberGlow 1.5s infinite alternate;
         }
+
         @keyframes cyberGlow {
             from { text-shadow: 0 0 10px #00ff00; }
             to { text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00; }
         }
+
         nav {
             display: flex;
             justify-content: center;
@@ -36,6 +48,7 @@
             top: 0;
             z-index: 1000;
         }
+
         .menu a {
             color: #00ff00;
             text-decoration: none;
@@ -43,12 +56,14 @@
             padding: 10px 20px;
             border: 1px solid #00ff00;
             border-radius: 5px;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
         }
+
         .menu a:hover {
             background: #00ff00;
             color: #000;
         }
+
         .menu-toggle {
             display: none;
             cursor: pointer;
@@ -56,12 +71,14 @@
             color: #00ff00;
             padding: 10px;
         }
+
         @media (max-width: 768px) {
             nav {
-                display: flex;
                 justify-content: space-between;
                 align-items: center;
+                padding: 10px 20px;
             }
+
             .menu {
                 display: none;
                 flex-direction: column;
@@ -70,30 +87,71 @@
                 left: 0;
                 width: 100%;
                 background: #111;
-                padding: 10px;
                 text-align: center;
+                padding: 10px 0;
             }
+
             .menu a {
                 display: block;
-                padding: 10px;
+                margin: 10px 0;
             }
+
             .menu-toggle {
                 display: block;
             }
         }
+
+        section {
+            padding: 50px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        ul {
+            list-style: none;
+            line-height: 1.8;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            margin-top: 10px;
+            background: #00ff00;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .btn:hover {
+            background: #ff0000;
+            color: #fff;
+            transform: scale(1.1);
+        }
+
         footer {
             text-align: center;
-            padding: 10px;
+            padding: 20px;
             font-size: 0.8em;
             color: #aaa;
+            background: #111;
         }
     </style>
 </head>
+
 <body>
+
     <header>
         <h1>Wellington Mukahiwa</h1>
         <p>Cybersecurity Student | IT Security | Ethical Hacking</p>
     </header>
+
     <nav>
         <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         <div class="menu">
@@ -105,16 +163,26 @@
             <a href="#contact">Contact</a>
         </div>
     </nav>
+
+    <!-- ABOUT -->
     <section id="about">
         <h2>About Me</h2>
-        <p>Dedicated Cybersecurity student at Walsh University with a 3.89 GPA, skilled in cloud security, phishing prevention, access & security management, and website security.</p>
+        <p>
+            Dedicated Cybersecurity student at Walsh University with a 3.89 GPA. Skilled in cloud security,
+            phishing prevention, access & security management, and website security. Passionate about ethical hacking
+            and digital protection.
+        </p>
     </section>
+
+    <!-- EDUCATION -->
     <section id="education">
         <h2>Education</h2>
-        <p><strong>Walsh University</strong> - Bachelor of Arts in Cybersecurity (Expected 2027)</p>
-        <p><strong>Notre Dame College</strong> - Bachelor of Arts in Cybersecurity (Transferred 3.9 GPA)</p>
-        <p><strong>Riverton Acedmy</strong> - High School Diploma in Science (2017-2022)</p>
+        <p><strong>Walsh University</strong> — Bachelor of Arts in Cybersecurity (Expected 2027)</p>
+        <p><strong>Notre Dame College</strong> — Bachelor of Arts in Cybersecurity (Transferred, GPA 3.9)</p>
+        <p><strong>Riverton Academy</strong> — High School Diploma in Science (2017–2022)</p>
     </section>
+
+    <!-- SKILLS -->
     <section id="skills">
         <h2>Technical Skills</h2>
         <ul>
@@ -122,55 +190,68 @@
             <li>Network Security & Firewall Configuration</li>
             <li>Programming: Python, SQL, Java, Bash</li>
             <li>Threat Intelligence & Incident Response</li>
-            <li>Web Publishing</li>
-            <li>WordPress expert</li>
-            <LI>HTML Website developer</LI>
-            <li>SEO</li>
-            <li>GitHub experience</li>
-            <li>Data Security and DataBase Management</li>
+            <li>Web Publishing & HTML Website Development</li>
+            <li>WordPress Expert</li>
+            <li>SEO & Search Engine Optimization</li>
+            <li>GitHub Experience</li>
+            <li>Data Security and Database Management</li>
             <li>Social Media Management</li>
             <li>Business Management and Development</li>
             <li>Microsoft Office Pro</li>
             <li>Course Builder for Walsh University</li>
-            <li>Digitalize offline plateforms into strong user friendly plateforms</li>
+            <li>Digitizing Offline Platforms into Strong, User-Friendly Digital Solutions</li>
         </ul>
     </section>
+
+    <!-- EXPERIENCE -->
     <section id="experience">
         <h2>Work Experience</h2>
-        <p><strong>Kontrol Tekniks</strong> - Cybersecurity Analyst, Website Developer, Social Media Manager, Google Maps License Holder, Project Manager</p>
-        <p><strong>Walsh University</strong> -  Cloud Security, Phishing Prevention, Access Management, Enhancing Website Development And Search Engine Optimization (SEO), Optimizing IT Security Systems and Formulating Digital Strategies For Business Growth</p>
+        <p><strong>Kontrol Tekniks</strong><br>
+        Cybersecurity Analyst | Website Developer | Social Media Manager | Google Maps License Holder | Project Manager</p>
+        
+        <p><strong>Walsh University</strong><br>
+        Cloud Security, Phishing Prevention, Access Management, Enhancing Website Development & SEO, Optimizing IT Security Systems, and Developing Digital Strategies for Business Growth</p>
     </section>
+
+    <!-- PROJECTS -->
     <section id="projects">
         <h2>Projects & Certifications</h2>
-        <p>✔ Developed a secure cousre website for Walsh University.</p>
-        <p>✔ Simulated and mitigated an advanced phishing attack scenario.</p>
-        <p>✔ CompTIA Security+ (In Progress)</p>
-        <p>✔ Certified Ethical Hacker (In Progress)</p>
-    </section>
-    <section id="CHECK THIS OUT" class="VIEW">
-        <h2>Websites made</h2>
-        <a href="https://cathyflorist.com" class="btn">Check out a WordPress WEBSITE</a>
-
-    </br>
-        
-        <a href="https://wellz26.github.io/MyPortfolio/welllz2.html" class="btn">Check out a HTML WEBSITE</a>
-
+        <ul>
+            <li>✔ Developed a secure course website for Walsh University</li>
+            <li>✔ Simulated and mitigated advanced phishing attack scenarios</li>
+            <li>✔ CompTIA Security+ (In Progress)</li>
+            <li>✔ Certified Ethical Hacker (In Progress)</li>
+        </ul>
     </section>
 
-    <section id="contact" class="contact">
+    <!-- WEBSITES -->
+    <section id="websites">
+        <h2>Websites Developed</h2>
+        <a href="https://cathyflorist.com" class="btn" target="_blank">Check out a WordPress Website</a>
+        <br><br>
+        <a href="https://wellz26.github.io/MyPortfolio/welllz2.html" class="btn" target="_blank">Check out an HTML Website</a>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
         <h2>Contact</h2>
-        <a href="https://www.linkedin.com/in/wellington-mukahiwa-443071304" class="btn">Connect on LinkedIn</a>
+        <a href="https://www.linkedin.com/in/wellington-mukahiwa-443071304" class="btn" target="_blank">Connect on LinkedIn</a>
     </section>
 
     <footer>
         <a href="index.html" class="btn">🔙 Back to Terminal</a>
-    
         <p>&copy; 2025 Wellington Mukahiwa | Cybersecurity Portfolio</p>
     </footer>
+
     <script>
         function toggleMenu() {
             const menu = document.querySelector('.menu');
-            menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+            if (menu.style.display === 'flex') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'flex';
+                menu.style.flexDirection = 'column';
+            }
         }
     </script>
 </body>
